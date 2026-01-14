@@ -17,14 +17,35 @@ export default function Home() {
         {/* Main Content */}
         <main className="px-5 pb-12">
           {/* Hero Section */}
-          <section className="pt-8 pb-10 text-center">
-            <Logo size="lg" />
-            <p className="mt-3 text-subhead text-text-secondary">
-              Your First 24 Hours in Korea
-            </p>
-            <p className="mt-2 text-footnote text-text-tertiary">
-              Essential guide for foreign tourists
-            </p>
+          <section className="pt-8 pb-10">
+            <div className="text-center mb-6">
+              <Logo size="lg" />
+            </div>
+
+            {/* Speech Bubble */}
+            <div className="flex items-start gap-3">
+              <span className="text-[40px] flex-shrink-0">🙋🏻‍♂️</span>
+              <div className="relative flex-1 p-4 bg-bg-primary rounded-[16px] shadow-card">
+                {/* Bubble tail */}
+                <div className="absolute left-[-8px] top-4 w-0 h-0 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent border-r-[8px] border-r-bg-primary" />
+
+                <p className="text-headline text-text-primary">
+                  Welcome to Korea!
+                </p>
+                <p className="mt-2 text-subhead text-text-secondary leading-relaxed">
+                  This guide is here to help first-time visitors prepare before their trip and find their way through the airport upon arrival.
+                </p>
+                <p className="mt-2 text-footnote text-text-tertiary">
+                  We hope your first moments in Korea become wonderful memories.
+                </p>
+                <p className="mt-3 pt-3 border-t border-separator text-caption text-text-tertiary">
+                  Have feedback or suggestions? Feel free to reach out at{' '}
+                  <a href="mailto:wnjoon@gmail.com" className="text-apple-blue">
+                    wnjoon@gmail.com
+                  </a>
+                </p>
+              </div>
+            </div>
           </section>
 
           {/* Phase Selection */}
