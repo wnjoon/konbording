@@ -1,0 +1,28 @@
+{
+  "transportCards": [
+    {
+      "id": "t-money",
+      "name": "T-money",
+      "description": "Korea's universal transit card, accepted on all public transportation nationwide including buses, subways, and taxis.",
+      "details": [
+        "Works everywhere in Korea",
+        "Rechargeable with Korean Won (cash only)",
+        "Available at convenience stores and subway stations"
+      ],
+      "icon": "credit-card",
+      "recommended": true
+    },
+    {
+      "id": "climate-card",
+      "name": "Climate Card",
+      "description": "Budget-friendly transit pass for Seoul. Choose from 1-day, 3-day, or longer passes for unlimited rides within the city.",
+      "details": [
+        "Valid only within Seoul",
+        "Great value for frequent travelers",
+        "Some transportation may not be supported"
+      ],
+      "icon": "ticket",
+      "recommended": false
+    }
+  ]
+}

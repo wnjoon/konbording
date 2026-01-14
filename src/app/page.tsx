@@ -40,8 +40,8 @@ export default function Home() {
                 </p>
                 <p className="mt-3 pt-3 border-t border-separator text-caption text-text-tertiary">
                   Have feedback or suggestions? Feel free to reach out at{' '}
-                  <a href="mailto:wnjoon@gmail.com" className="text-apple-blue">
-                    wnjoon@gmail.com
+                  <a href="mailto:konbording@gmail.com" className="text-apple-blue">
+                    konbording@gmail.com
                   </a>
                 </p>
               </div>

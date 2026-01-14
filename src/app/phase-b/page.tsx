@@ -1,9 +1,18 @@
-import { Logo } from '@/components/common/Logo';
+'use client';
+
+import { useState } from 'react';
 import { ThemeToggle } from '@/components/common/ThemeToggle';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import { TerminalSelector } from './components/TerminalSelector';
+import { CurrencyExchange } from './components/CurrencyExchange';
+import { TransportCards } from './components/TransportCards';
+
+type Terminal = '1' | '2' | null;
 
 export default function PhaseB() {
+  const [terminal, setTerminal] = useState<Terminal>(null);
+
   return (
     <div className="min-h-screen bg-bg-secondary">
       <div className="mx-auto max-w-[430px] min-h-screen bg-bg-secondary">
@@ -28,20 +37,21 @@ export default function PhaseB() {
               Just Arrived
             </h1>
             <p className="mt-2 text-subhead text-text-secondary">
-              Find help at the airport right now
+              Your guide to getting from the airport to Seoul
             </p>
           </section>
 
-          {/* Placeholder Content */}
-          <section className="py-12 text-center">
-            <div className="text-6xl mb-4">🛬</div>
-            <p className="text-body text-text-secondary">
-              Coming soon...
-            </p>
-            <p className="mt-2 text-footnote text-text-tertiary">
-              Transport, WiFi, Payment & More
-            </p>
-          </section>
+          <div className="space-y-6">
+            <TerminalSelector selected={terminal} onSelect={setTerminal} />
+
+            {terminal && (
+              <>
+                <CurrencyExchange terminal={terminal} />
+                <TransportCards />
+                {/* Transport Guide will be added here */}
+              </>
+            )}
+          </div>
         </main>
       </div>
     </div>

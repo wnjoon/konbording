@@ -1,0 +1,100 @@
+{
+  "terminals": {
+    "1": {
+      "name": "Terminal 1",
+      "exchanges": [
+        {
+          "id": "kb-arrival-b",
+          "name": "KB Bank Currency Exchange",
+          "location": "Near Arrival Hall B on 1F, Terminal 1",
+          "phone": "032-743-3260",
+          "hours": "00:00 ~ 24:00",
+          "mapUrl": "https://www.airport.kr/geomap/ap_en/view.do?type=1&alertType=undefined&poiId=1065#/search/item/33494",
+          "featured": true,
+          "note": "24-hour service"
+        },
+        {
+          "id": "kb-exit-9",
+          "name": "KB Bank Currency Exchange",
+          "location": "Near Exit 9 on 1F, Terminal 1",
+          "phone": "032-743-3260",
+          "hours": "06:00 ~ 22:00",
+          "mapUrl": "https://www.airport.kr/geomap/ap_en/view.do?type=1&alertType=undefined&poiId=816#/search/item/33495",
+          "featured": false
+        },
+        {
+          "id": "hana-exit-4",
+          "name": "Hana Bank Currency Exchange",
+          "location": "Near Exit 4 on 1F, Terminal 1",
+          "phone": "032-743-2220",
+          "hours": "06:00 ~ 22:00",
+          "mapUrl": "https://www.airport.kr/geomap/ap_en/view.do?type=1&alertType=undefined&poiId=863#/search/item/33872",
+          "featured": false
+        },
+        {
+          "id": "hana-duty-free",
+          "name": "Hana Bank Currency Exchange",
+          "location": "Baggage Claim Area inside Arrival Hall E on 1F, Terminal 1",
+          "phone": "032-743-2220",
+          "hours": "06:00 ~ 22:00",
+          "mapUrl": "https://www.airport.kr/geomap/ap_en/view.do?type=1&alertType=undefined&poiId=747#/search/item/33874",
+          "featured": false,
+          "note": "Duty Free Area"
+        }
+      ],
+      "allExchangesUrl": "https://www.airport.kr/ap_en/1536/subview.do?enc=Zm5jdDF8QEB8JTJGZmFjaWxpdHlJbmZvJTJGYXBfZW4lMkY0MiUyRmxpc3QuZG8lM0ZzcmNoVGVybWluYWxJZCUzRFAwMSUyNnNyY2hDb2x1bW4lM0R1c2VyJTI2c3JjaExjbGFzJTNEMSUyNnNyY2hNbHNmYyUzRDExJTI2c3JjaFNjbGFzJTNEMTExJTI2c3JjaFdyZCUzRCUyNg%3D%3D"
+    },
+    "2": {
+      "name": "Terminal 2",
+      "exchanges": [
+        {
+          "id": "kb-arrival-24h",
+          "name": "KB Bank Currency Exchange",
+          "location": "Near Exit 4 in Public Area onn 3rd Floor, Terminal 2",
+          "phone": "032-743-3262",
+          "hours": "00:00 ~ 24:00",
+          "mapUrl": "https://www.airport.kr/geomap/ap_en/view.do?type=1&alertType=undefined&poiId=288#/search/item/34552",
+          "featured": true,
+          "note": "24-hour service"
+        },
+        {
+          "id": "kb-arrival-1",
+          "name": "KB Bank Currency Exchange",
+          "location": "Between Exit 1-2 on 1st Floor, Terminal 2",
+          "phone": "032-743-3262",
+          "hours": "06:00 ~ 22:00",
+          "mapUrl": "https://www.airport.kr/geomap/ap_en/view.do?type=1&alertType=undefined&poiId=1048#/search/item/33491",
+          "featured": false
+        },
+        {
+          "id": "kb-exit-b",
+          "name": "KB Bank Currency Exchange",
+          "location": "Near Arrival Hall B on 1F, Terminal 2",
+          "phone": "032-743-3262",
+          "hours": "05:00 ~ 20:00",
+          "mapUrl": "https://www.airport.kr/geomap/ap_en/view.do?type=1&alertType=undefined&poiId=1015#/search/item/61974",
+          "featured": false
+        },
+        {
+          "id": "hana-exit-4",
+          "name": "Hana Bank Currency Exchange",
+          "location": "Near Exit 4 on 1F, Terminal 2",
+          "phone": "032-875-1111",
+          "hours": "06:00 ~ 22:00",
+          "mapUrl": "https://www.airport.kr/geomap/ap_en/view.do?type=1&alertType=undefined&poiId=1058#/search/item/33885",
+          "featured": false
+        },
+        {
+          "id": "hana-exit-10",
+          "name": "Hana Bank Currency Exchange",
+          "location": "Near Exit 10 on 1F, Terminal 2",
+          "phone": "032-875-1111",
+          "hours": "06:00 ~ 22:00",
+          "mapUrl": "https://www.airport.kr/geomap/ap_en/view.do?type=1&alertType=undefined&poiId=137#/search/item/34573",
+          "featured": false
+        }
+      ],
+      "allExchangesUrl": "https://www.airport.kr/ap_en/1536/subview.do?enc=Zm5jdDF8QEB8JTJGZmFjaWxpdHlJbmZvJTJGYXBfZW4lMkY0MiUyRmxpc3QuZG8lM0ZzcmNoVGVybWluYWxJZCUzRFAwMyUyNnNyY2hDb2x1bW4lM0R1c2VyJTI2c3JjaExjbGFzJTNEMSUyNnNyY2hNbHNmYyUzRDExJTI2c3JjaFNjbGFzJTNEMTExJTI2c3JjaFdyZCUzRCUyNg%3D%3D"
+    }
+  }
+}
