@@ -1,7 +1,9 @@
-import { Logo } from '@/components/common/Logo';
 import { ThemeToggle } from '@/components/common/ThemeToggle';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import { EssentialApps } from './components/EssentialApps';
+import { Connectivity } from './components/Connectivity';
+import { EntryDocs } from './components/EntryDocs';
 
 export default function PhaseA() {
   return (
@@ -23,7 +25,8 @@ export default function PhaseA() {
 
         {/* Main Content */}
         <main className="px-5 pb-12">
-          <section className="pt-4 pb-8">
+          {/* Page Title */}
+          <section className="pt-4 pb-6">
             <h1 className="text-large-title text-text-primary">
               Preparing to Leave
             </h1>
@@ -32,16 +35,12 @@ export default function PhaseA() {
             </p>
           </section>
 
-          {/* Placeholder Content */}
-          <section className="py-12 text-center">
-            <div className="text-6xl mb-4">🛫</div>
-            <p className="text-body text-text-secondary">
-              Coming soon...
-            </p>
-            <p className="mt-2 text-footnote text-text-tertiary">
-              Connectivity, Apps, Documents & More
-            </p>
-          </section>
+          {/* Content Sections */}
+          <div className="space-y-8">
+            <EssentialApps />
+            <Connectivity />
+            <EntryDocs />
+          </div>
         </main>
       </div>
     </div>

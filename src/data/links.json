@@ -1,0 +1,50 @@
+{
+  "entryDocs": [
+    {
+      "id": "arrival-card",
+      "name": "e-Arrival Card",
+      "description": "Submit within 3 days before arrival. K-ETA holders and registered foreigners are exempt. Valid for 72 hours after submission.",
+      "tip": "Required for entry",
+      "url": "https://www.e-arrivalcard.go.kr/portal/main/index.do?locale=EN",
+      "icon": "file-check"
+    },
+    {
+      "id": "q-code",
+      "name": "Q-Code",
+      "description": "Not mandatory, but allows faster immigration and skips the health questionnaire at the airport.",
+      "tip": "Optional but recommended",
+      "url": "https://cov19ent.kdca.go.kr/cpassportal/biz/beffatstmnt/main.do",
+      "icon": "qr-code"
+    }
+  ],
+  "connectivity": {
+    "esim": {
+      "providers": [
+        {
+          "name": "Trip.com",
+          "url": "https://www.trip.com/things-to-do/experiences/southkorea-simcard/?locale=en_xx&curr=USD"
+        },
+        {
+          "name": "Nomad eSIM",
+          "url": "https://www.nomadesim.com/en/south-korea-eSIM"
+        },
+        {
+          "name": "Holafly",
+          "url": "https://esim.holafly.com/esim-south-korea/"
+        },
+        {
+          "name": "Korea eSIM",
+          "url": "https://krsim.net/category/esim-usim-wifi/57/"
+        }
+      ]
+    },
+    "physical": {
+      "tip": "Buy at airport convenience stores or telecom booths"
+    },
+    "pocketWifi": {
+      "name": "WiFi Dosirak",
+      "url": "https://kor.wifidosirak.com/EN",
+      "tip": "Rent a portable WiFi device for unlimited internet"
+    }
+  }
+}

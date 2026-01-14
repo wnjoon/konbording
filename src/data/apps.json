@@ -1,0 +1,42 @@
+{
+  "essential": [
+    {
+      "id": "naver-map",
+      "name": "Naver Map",
+      "description": "Best maps & navigation for Korea",
+      "icon": "/naver-map.png",
+      "appStore": "https://apps.apple.com/app/naver-map-navigation/id311867728",
+      "playStore": "https://play.google.com/store/apps/details?id=com.nhn.android.nmap"
+    },
+    {
+      "id": "papago",
+      "name": "Papago",
+      "description": "Korean translation & conversation",
+      "icon": "/papago.png",
+      "appStore": "https://apps.apple.com/app/papago-ai-translate/id1147874819",
+      "playStore": "https://play.google.com/store/apps/details?id=com.naver.labs.translator"
+    }
+  ],
+  "taxi": {
+    "taba": {
+      "id": "taba",
+      "name": "Taba",
+      "tagline": "Best for Tourists",
+      "description": "Easily verify with your foreign phone number. Supports multiple languages and various payment methods including international credit cards.",
+      "icon": "/taba-taxi.png",
+      "recommended": true,
+      "appStore": "https://apps.apple.com/us/app/taba-get-a-taxi-in-korea/id6466561408",
+      "playStore": "https://play.google.com/store/apps/details?id=com.globaleur.taxi"
+    },
+    "kakaoT": {
+      "id": "kakao-t",
+      "name": "Kakao T",
+      "tagline": "Local Standard",
+      "description": "The most widely used taxi app in Korea.",
+      "icon": "/kakao-taxi.png",
+      "recommended": false,
+      "appStore": "https://apps.apple.com/app/kakao-t/id981110422",
+      "playStore": "https://play.google.com/store/apps/details?id=com.kakao.taxi"
+    }
+  }
+}
