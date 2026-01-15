@@ -66,7 +66,7 @@ function TaxiAppCard({ app }: { app: TaxiApp }) {
   return (
     <div className={`p-4 rounded-[16px] ${
       app.recommended
-        ? 'bg-apple-blue shadow-elevated'
+        ? 'bg-success shadow-elevated'
         : 'bg-bg-primary shadow-card'
     }`}>
       <div className="flex items-start gap-3">

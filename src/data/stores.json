@@ -1,0 +1,60 @@
+{
+  "terminals": {
+    "1": {
+      "name": "Terminal 1",
+      "stores": [
+        {
+          "id": "cu-exit-2",
+          "name": "CU CVS",
+          "location": "Near Exit 2 on 1F, Terminal 1",
+          "hours": "00:00 ~ 24:00",
+          "mapUrl": "https://www.airport.kr/geomap/ap_en/view.do?type=1&alertType=undefined&poiId=544#/search/item/33530",
+          "featured": true,
+          "note": "24-hour service"
+        },
+        {
+          "id": "cu-exit-11",
+          "name": "CU CVS",
+          "location": "Near Exit 11 on 1F, Terminal 1",
+          "hours": "00:00 ~ 24:00",
+          "mapUrl": "https://www.airport.kr/geomap/ap_en/view.do?type=1&alertType=undefined&poiId=339#/search/item/33614",
+          "featured": false,
+          "note": "24-hour service"
+        },
+        {
+          "id": "cu-exit-13",
+          "name": "CU CVS",
+          "location": "Near Exit 13 on 1F, Terminal 1",
+          "hours": "00:00 ~ 24:00",
+          "mapUrl": "https://www.airport.kr/geomap/ap_en/view.do?type=1&alertType=undefined&poiId=76#/search/item/33533",
+          "featured": false,
+          "note": "24-hour service"
+        }
+      ],
+      "allStoresUrl": "https://www.airport.kr/ap_en/1532/subview.do?enc=Zm5jdDF8QEB8JTJGZmFjaWxpdHlJbmZvJTJGYXBfZW4lMkYzOSUyRmxpc3QuZG8lM0ZzcmNoVGVybWluYWxJZCUzRFAwMSUyNnNyY2hDb2x1bW4lM0R1c2VyJTI2c3JjaExjbGFzJTNENCUyNnNyY2hNbHNmYyUzRDQzJTI2c3JjaFNjbGFzJTNEJTI2c3JjaFdyZCUzRCUyNg%3D%3D"
+    },
+    "2": {
+      "name": "Terminal 2",
+      "stores": [
+        {
+          "id": "cu-center",
+          "name": "CU",
+          "location": "Center of Public Area 1F, Terminal 2",
+          "hours": "00:00 ~ 24:00",
+          "mapUrl": "https://www.airport.kr/geomap/ap_en/view.do?type=1&alertType=undefined&poiId=900#/search/item/33521",
+          "featured": true,
+          "note": "24-hour service"
+        },
+        {
+          "id": "cu-exit-10",
+          "name": "CU CVS",
+          "location": "Near Exit 10 on 1F, Terminal 2",
+          "hours": "07:00 ~ 22:00",
+          "mapUrl": "https://www.airport.kr/geomap/ap_en/view.do?type=1&alertType=undefined&poiId=2272#/search/item/60198",
+          "featured": false
+        }
+      ],
+      "allStoresUrl": "https://www.airport.kr/ap_en/1532/subview.do?enc=Zm5jdDF8QEB8JTJGZmFjaWxpdHlJbmZvJTJGYXBfZW4lMkYzOSUyRmxpc3QuZG8lM0ZzcmNoVGVybWluYWxJZCUzRFAwMyUyNnNyY2hDb2x1bW4lM0R1c2VyJTI2c3JjaExjbGFzJTNENCUyNnNyY2hNbHNmYyUzRDQzJTI2c3JjaFNjbGFzJTNEJTI2c3JjaFdyZCUzRCUyNg%3D%3D"
+    }
+  }
+}

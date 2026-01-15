@@ -7,6 +7,7 @@ import { ArrowLeft } from 'lucide-react';
 import { TerminalSelector } from './components/TerminalSelector';
 import { CurrencyExchange } from './components/CurrencyExchange';
 import { TransportCards } from './components/TransportCards';
+import { ConvenienceStore } from './components/ConvenienceStore';
 
 type Terminal = '1' | '2' | null;
 
@@ -48,6 +49,7 @@ export default function PhaseB() {
               <>
                 <CurrencyExchange terminal={terminal} />
                 <TransportCards />
+                <ConvenienceStore terminal={terminal} />
                 {/* Transport Guide will be added here */}
               </>
             )}

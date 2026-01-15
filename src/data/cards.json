@@ -6,11 +6,14 @@
       "description": "Korea's universal transit card, accepted on all public transportation nationwide including buses, subways, and taxis.",
       "details": [
         "Works everywhere in Korea",
-        "Rechargeable with Korean Won (cash only)",
-        "Available at convenience stores and subway stations"
+        "Covers subway, all buses, and taxi",
+        "Top up any amount as needed (cash only)",
+        "Rechargeable at any convenience store or subway station nationwide",
+        "Card purchase fee required"
       ],
       "icon": "credit-card",
-      "recommended": true
+      "recommended": true,
+      "officialLink": "https://pay.tmoney.co.kr/ncs/pct/tmnyintd/ReadFrgnKoreaTourCardEngIntd.dev"
     },
     {
       "id": "climate-card",
@@ -18,11 +21,15 @@
       "description": "Budget-friendly transit pass for Seoul. Choose from 1-day, 3-day, or longer passes for unlimited rides within the city.",
       "details": [
         "Valid only within Seoul",
-        "Great value for frequent travelers",
-        "Some transportation may not be supported"
+        "Covers subway, Ttareungi, and most buses",
+        "Available as 1-day to 30-day passes",
+        "Top up with cash or Korean-issued cards only",
+        "Rechargeable at any convenience store or subway station nationwide",
+        "Card purchase fee required"
       ],
       "icon": "ticket",
-      "recommended": false
+      "recommended": false,
+      "officialLink": "https://english.seoul.go.kr/policy/transportation/climate-card/"
     }
   ]
 }
