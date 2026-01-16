@@ -18,11 +18,11 @@ interface ConvenienceStoreProps {
   terminal: '1' | '2';
 }
 
-function StoreCard({ store }: { store: StoreItem }) {
+function StoreItemCard({ store }: { store: StoreItem }) {
   const hasBadge = store.featured || store.note;
 
   return (
-    <div className="p-4 bg-bg-primary rounded-[16px] shadow-card">
+    <div className="p-3 bg-bg-secondary rounded-[12px]">
       {hasBadge && (
         <div className="mb-2">
           {store.featured && (
@@ -31,7 +31,7 @@ function StoreCard({ store }: { store: StoreItem }) {
             </span>
           )}
           {store.note && !store.featured && (
-            <span className="inline-block px-2 py-0.5 bg-bg-secondary text-text-secondary text-caption rounded-full">
+            <span className="inline-block px-2 py-0.5 bg-bg-primary text-text-secondary text-caption rounded-full">
               {store.note}
             </span>
           )}
@@ -71,20 +71,39 @@ function StoreCard({ store }: { store: StoreItem }) {
 }
 
 export function ConvenienceStore({ terminal }: ConvenienceStoreProps) {
+  const [isExpanded, setIsExpanded] = useState(false);
   const [showAll, setShowAll] = useState(false);
   const terminalData = storesData.terminals[terminal];
 
   if (!terminalData || terminalData.stores.length === 0) {
     return (
-      <section>
-        <h2 className="text-footnote text-text-secondary uppercase tracking-wider px-1 mb-3">
-          Convenience Store
-        </h2>
-        <div className="p-4 bg-bg-primary rounded-[16px] shadow-card text-center">
-          <p className="text-body text-text-secondary">
-            Convenience store information for {terminalData?.name || `Terminal ${terminal}`} coming soon.
-          </p>
-        </div>
+      <section id="convenience-store" className="bg-bg-primary rounded-[16px] shadow-card overflow-hidden">
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="w-full flex items-center justify-between p-4"
+        >
+          <div className="flex items-center gap-3">
+            <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-[10px] bg-apple-blue/10 text-apple-blue">
+              <Store className="w-5 h-5" />
+            </div>
+            <div className="text-left">
+              <h3 className="text-headline text-text-primary">Convenience Store</h3>
+              <p className="text-subhead text-text-secondary">Buy transit cards here</p>
+            </div>
+          </div>
+          <div className="text-text-tertiary">
+            {isExpanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+          </div>
+        </button>
+        {isExpanded && (
+          <div className="px-4 pb-4">
+            <div className="p-3 bg-bg-secondary rounded-[12px]">
+              <p className="text-body text-text-secondary text-center">
+                Convenience store information for {terminalData?.name || `Terminal ${terminal}`} coming soon.
+              </p>
+            </div>
+          </div>
+        )}
       </section>
     );
   }
@@ -100,49 +119,65 @@ export function ConvenienceStore({ terminal }: ConvenienceStoreProps) {
   const hasMore = sortedStores.length > 1;
 
   return (
-    <section id="convenience-store" className="rounded-[20px] transition-all duration-300">
-      <h2 className="text-footnote text-text-secondary uppercase tracking-wider px-1 mb-3">
-        Convenience Store
-      </h2>
+    <section id="convenience-store" className="bg-bg-primary rounded-[16px] shadow-card overflow-hidden">
+      <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="w-full flex items-center justify-between p-4"
+      >
+        <div className="flex items-center gap-3">
+          <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-[10px] bg-apple-blue/10 text-apple-blue">
+            <Store className="w-5 h-5" />
+          </div>
+          <div className="text-left">
+            <h3 className="text-headline text-text-primary">Convenience Store</h3>
+            <p className="text-subhead text-text-secondary">{sortedStores.length} locations in {terminalData.name}</p>
+          </div>
+        </div>
+        <div className="text-text-tertiary">
+          {isExpanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+        </div>
+      </button>
 
-      <div className="space-y-3">
-        {displayedStores.map((store) => (
-          <StoreCard key={store.id} store={store} />
-        ))}
-      </div>
+      {isExpanded && (
+        <div className="px-4 pb-4 space-y-2">
+          {displayedStores.map((store) => (
+            <StoreItemCard key={store.id} store={store} />
+          ))}
 
-      {hasMore && !showAll && (
-        <button
-          onClick={() => setShowAll(true)}
-          className="flex items-center justify-center gap-2 mt-3 w-full h-11 bg-bg-primary rounded-[12px] shadow-card text-body text-apple-blue transition-apple hover:shadow-elevated"
-        >
-          <span>Show {sortedStores.length - 1} more locations</span>
-          <ChevronDown className="w-4 h-4" />
-        </button>
-      )}
-
-      {showAll && (
-        <>
-          <button
-            onClick={() => setShowAll(false)}
-            className="flex items-center justify-center gap-2 mt-3 w-full h-11 bg-bg-secondary rounded-[12px] text-body text-text-secondary transition-apple hover:bg-gray-5"
-          >
-            <span>Show less</span>
-            <ChevronUp className="w-4 h-4" />
-          </button>
-
-          {terminalData.allStoresUrl && (
-            <a
-              href={terminalData.allStoresUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 mt-3 h-11 bg-bg-primary rounded-[12px] shadow-card text-body text-apple-blue transition-apple hover:shadow-elevated"
+          {hasMore && !showAll && (
+            <button
+              onClick={() => setShowAll(true)}
+              className="w-full flex items-center justify-center gap-2 py-3 text-body text-apple-blue"
             >
-              <span>View all store locations</span>
-              <ExternalLink className="w-4 h-4" />
-            </a>
+              <span>Show {sortedStores.length - 1} more locations</span>
+              <ChevronDown className="w-4 h-4" />
+            </button>
           )}
-        </>
+
+          {showAll && (
+            <>
+              <button
+                onClick={() => setShowAll(false)}
+                className="w-full flex items-center justify-center gap-2 py-3 text-body text-text-secondary"
+              >
+                <span>Show less</span>
+                <ChevronUp className="w-4 h-4" />
+              </button>
+
+              {terminalData.allStoresUrl && (
+                <a
+                  href={terminalData.allStoresUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center gap-2 py-3 text-body text-apple-blue"
+                >
+                  <span>View all store locations</span>
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              )}
+            </>
+          )}
+        </div>
       )}
     </section>
   );

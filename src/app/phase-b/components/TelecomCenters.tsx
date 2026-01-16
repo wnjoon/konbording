@@ -1,50 +1,41 @@
 'use client';
 
 import { useState } from 'react';
-import { MapPin, Phone, Clock, ExternalLink, ChevronDown, ChevronUp, Banknote } from 'lucide-react';
-import exchangeData from '@/data/exchange.json';
+import { MapPin, Clock, ExternalLink, ChevronDown, ChevronUp, Wifi } from 'lucide-react';
+import telecomData from '@/data/telecom.json';
 
-interface Exchange {
+interface TelecomCenter {
   id: string;
   name: string;
-  location: string;
-  phone: string;
   hours: string;
+  location: string;
   mapUrl: string;
   featured?: boolean;
-  note?: string;
 }
 
-interface CurrencyExchangeProps {
+interface TelecomCentersProps {
   terminal: '1' | '2';
 }
 
-function ExchangeItem({ exchange }: { exchange: Exchange }) {
-  const hasBadge = exchange.featured || exchange.note;
+function CenterItem({ center }: { center: TelecomCenter }) {
+  const is24h = center.hours === '00:00 ~ 24:00';
 
   return (
     <div className="p-3 bg-bg-secondary rounded-[12px]">
-      {hasBadge && (
+      {is24h && (
         <div className="mb-2">
-          {exchange.featured && (
-            <span className="inline-block px-2 py-0.5 bg-success/10 text-success text-caption font-medium rounded-full">
-              24-hour service
-            </span>
-          )}
-          {exchange.note && !exchange.featured && (
-            <span className="inline-block px-2 py-0.5 bg-bg-primary text-text-secondary text-caption rounded-full">
-              {exchange.note}
-            </span>
-          )}
+          <span className="inline-block px-2 py-0.5 bg-success/10 text-success text-caption font-medium rounded-full">
+            24-hour service
+          </span>
         </div>
       )}
 
       <div className="flex items-start justify-between gap-3">
         <h3 className="text-headline text-text-primary">
-          {exchange.name}
+          {center.name}
         </h3>
         <a
-          href={exchange.mapUrl}
+          href={center.mapUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-full bg-apple-blue/10 text-apple-blue transition-apple hover:bg-apple-blue/20"
@@ -57,48 +48,39 @@ function ExchangeItem({ exchange }: { exchange: Exchange }) {
         <div className="flex items-start gap-2">
           <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5 text-text-tertiary" />
           <span className="text-footnote text-text-secondary flex-1">
-            {exchange.location}
+            {center.location}
           </span>
         </div>
         <div className="flex items-start gap-2">
           <Clock className="w-4 h-4 flex-shrink-0 mt-0.5 text-text-tertiary" />
           <span className="text-footnote text-text-secondary flex-1">
-            {exchange.hours}
+            {center.hours}
           </span>
-        </div>
-        <div className="flex items-start gap-2">
-          <Phone className="w-4 h-4 flex-shrink-0 mt-0.5 text-text-tertiary" />
-          <a
-            href={`tel:${exchange.phone}`}
-            className="text-footnote text-text-secondary flex-1"
-          >
-            {exchange.phone}
-          </a>
         </div>
       </div>
     </div>
   );
 }
 
-export function CurrencyExchange({ terminal }: CurrencyExchangeProps) {
+export function TelecomCenters({ terminal }: TelecomCentersProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [showAll, setShowAll] = useState(false);
-  const terminalData = exchangeData.terminals[terminal];
+  const terminalData = telecomData.terminals[terminal];
 
-  if (!terminalData || terminalData.exchanges.length === 0) {
+  if (!terminalData || terminalData.centers.length === 0) {
     return (
-      <section id="currency-exchange" className="bg-bg-primary rounded-[16px] shadow-card overflow-hidden">
+      <section id="telecom-centers" className="bg-bg-primary rounded-[16px] shadow-card overflow-hidden">
         <button
           onClick={() => setIsExpanded(!isExpanded)}
           className="w-full flex items-center justify-between p-4"
         >
           <div className="flex items-center gap-3">
-            <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-[10px] bg-success/10 text-success">
-              <Banknote className="w-5 h-5" />
+            <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-[10px] bg-apple-blue/10 text-apple-blue">
+              <Wifi className="w-5 h-5" />
             </div>
             <div className="text-left">
-              <h3 className="text-headline text-text-primary">Currency Exchange</h3>
-              <p className="text-subhead text-text-secondary">Exchange money for your trip</p>
+              <h3 className="text-headline text-text-primary">Buy Internet at Airport</h3>
+              <p className="text-subhead text-text-secondary">SIM cards & WiFi rental</p>
             </div>
           </div>
           <div className="text-text-tertiary">
@@ -109,7 +91,7 @@ export function CurrencyExchange({ terminal }: CurrencyExchangeProps) {
           <div className="px-4 pb-4">
             <div className="p-3 bg-bg-secondary rounded-[12px]">
               <p className="text-body text-text-secondary text-center">
-                Currency exchange information for {terminalData?.name || `Terminal ${terminal}`} coming soon.
+                Telecom center information for {terminalData?.name || `Terminal ${terminal}`} coming soon.
               </p>
             </div>
           </div>
@@ -118,29 +100,31 @@ export function CurrencyExchange({ terminal }: CurrencyExchangeProps) {
     );
   }
 
-  // Sort exchanges: featured first
-  const sortedExchanges = [...terminalData.exchanges].sort((a, b) => {
-    if (a.featured && !b.featured) return -1;
-    if (!a.featured && b.featured) return 1;
+  // Sort centers: 24h first
+  const sortedCenters = [...terminalData.centers].sort((a, b) => {
+    const aIs24h = a.hours === '00:00 ~ 24:00';
+    const bIs24h = b.hours === '00:00 ~ 24:00';
+    if (aIs24h && !bIs24h) return -1;
+    if (!aIs24h && bIs24h) return 1;
     return 0;
   });
 
-  const displayedExchanges = showAll ? sortedExchanges : sortedExchanges.slice(0, 1);
-  const hasMore = sortedExchanges.length > 1;
+  const displayedCenters = showAll ? sortedCenters : sortedCenters.slice(0, 1);
+  const hasMore = sortedCenters.length > 1;
 
   return (
-    <section id="currency-exchange" className="bg-bg-primary rounded-[16px] shadow-card overflow-hidden">
+    <section id="telecom-centers" className="bg-bg-primary rounded-[16px] shadow-card overflow-hidden">
       <button
         onClick={() => setIsExpanded(!isExpanded)}
         className="w-full flex items-center justify-between p-4"
       >
         <div className="flex items-center gap-3">
-          <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-[10px] bg-success/10 text-success">
-            <Banknote className="w-5 h-5" />
+          <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-[10px] bg-apple-blue/10 text-apple-blue">
+            <Wifi className="w-5 h-5" />
           </div>
           <div className="text-left">
-            <h3 className="text-headline text-text-primary">Currency Exchange</h3>
-            <p className="text-subhead text-text-secondary">{sortedExchanges.length} locations in {terminalData.name}</p>
+            <h3 className="text-headline text-text-primary">Buy Internet at Airport</h3>
+            <p className="text-subhead text-text-secondary">{sortedCenters.length} locations in {terminalData.name}</p>
           </div>
         </div>
         <div className="text-text-tertiary">
@@ -150,8 +134,20 @@ export function CurrencyExchange({ terminal }: CurrencyExchangeProps) {
 
       {isExpanded && (
         <div className="px-4 pb-4 space-y-2">
-          {displayedExchanges.map((exchange) => (
-            <ExchangeItem key={exchange.id} exchange={exchange} />
+          {/* Speech Bubble */}
+          <div className="flex items-start gap-3">
+            <span className="text-[32px] flex-shrink-0">🤵‍♂️</span>
+            <div className="relative flex-1 p-4 bg-bg-secondary rounded-[12px]">
+              {/* Bubble tail */}
+              <div className="absolute left-[-8px] top-4 w-0 h-0 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent border-r-[8px] border-r-bg-secondary" />
+              <p className="text-subhead text-text-primary leading-relaxed">
+                Didn't book internet in advance? No problem! You can buy SIM cards or rent WiFi devices at these locations.
+              </p>
+            </div>
+          </div>
+
+          {displayedCenters.map((center) => (
+            <CenterItem key={center.id} center={center} />
           ))}
 
           {hasMore && !showAll && (
@@ -159,7 +155,7 @@ export function CurrencyExchange({ terminal }: CurrencyExchangeProps) {
               onClick={() => setShowAll(true)}
               className="w-full flex items-center justify-center gap-2 py-3 text-body text-apple-blue"
             >
-              <span>Show {sortedExchanges.length - 1} more locations</span>
+              <span>Show {sortedCenters.length - 1} more locations</span>
               <ChevronDown className="w-4 h-4" />
             </button>
           )}
@@ -174,14 +170,14 @@ export function CurrencyExchange({ terminal }: CurrencyExchangeProps) {
                 <ChevronUp className="w-4 h-4" />
               </button>
 
-              {terminalData.allExchangesUrl && (
+              {terminalData.allCentersUrl && (
                 <a
-                  href={terminalData.allExchangesUrl}
+                  href={terminalData.allCentersUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center gap-2 py-3 text-body text-apple-blue"
                 >
-                  <span>View all exchange locations</span>
+                  <span>View all telecom locations</span>
                   <ExternalLink className="w-4 h-4" />
                 </a>
               )}

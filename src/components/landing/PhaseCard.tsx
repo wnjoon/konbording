@@ -24,7 +24,7 @@ export function PhaseCard({ href, icon, title, description }: PhaseCardProps) {
           <h2 className="text-headline text-text-primary mb-1">
             {title}
           </h2>
-          <p className="text-subhead text-text-secondary">
+          <p className="text-[clamp(12px,3.2vw,15px)] text-text-secondary whitespace-nowrap">
             {description}
           </p>
         </div>

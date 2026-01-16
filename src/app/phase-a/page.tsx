@@ -30,7 +30,7 @@ export default function PhaseA() {
             <h1 className="text-large-title text-text-primary">
               Preparing to Leave
             </h1>
-            <p className="mt-2 text-subhead text-text-secondary">
+            <p className="mt-2 text-[clamp(13px,3.8vw,15px)] text-text-secondary whitespace-nowrap">
               Get ready before your flight to Korea
             </p>
           </section>

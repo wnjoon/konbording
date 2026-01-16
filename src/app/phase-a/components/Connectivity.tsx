@@ -86,27 +86,51 @@ export function Connectivity() {
         )}
 
         {supportsEsim === 'physical' && (
-          <div className="p-3 bg-bg-secondary rounded-[10px]">
-            <div className="flex items-center gap-2 mb-2">
-              <Wifi className="w-4 h-4 text-apple-blue" />
-              <span className="text-headline text-text-primary">Pocket WiFi Recommended</span>
-            </div>
-            <p className="text-subhead text-text-secondary mb-3">
-              {linksData.connectivity.pocketWifi.tip}
-            </p>
-            <a
-              href={linksData.connectivity.pocketWifi.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-3 h-8 bg-bg-primary rounded-full text-footnote text-apple-blue shadow-subtle transition-apple hover:shadow-card w-fit"
-            >
-              <span>{linksData.connectivity.pocketWifi.name}</span>
-              <ExternalLink className="w-3 h-3" />
-            </a>
-            <div className="mt-3 p-2.5 bg-warning/10 rounded-[8px]">
-              <p className="text-caption text-warning font-medium">
-                Important: Check the Pick-up/Return menu to find the pickup location at your arrival airport.
+          <div className="space-y-3">
+            {/* USIM Option */}
+            <div className="p-3 bg-bg-secondary rounded-[10px]">
+              <div className="flex items-center gap-2 mb-2">
+                <Smartphone className="w-4 h-4 text-apple-blue" />
+                <span className="text-headline text-text-primary">Option 1: USIM</span>
+              </div>
+              <p className="text-subhead text-text-secondary mb-3">
+                Buy a physical SIM card at airport telecom booths or convenience stores. You can also order online for airport pickup.
               </p>
+              <a
+                href="https://krsim.net/category/esim-usim-wifi/57/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-3 h-8 bg-bg-primary rounded-full text-footnote text-apple-blue shadow-subtle transition-apple hover:shadow-card w-fit"
+              >
+                <span>Korea eSIM (USIM)</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
+
+            {/* Pocket WiFi Option */}
+            <div className="p-3 bg-bg-secondary rounded-[10px]">
+              <div className="flex items-center gap-2 mb-2">
+                <Wifi className="w-4 h-4 text-apple-blue" />
+                <span className="text-headline text-text-primary">Option 2: Pocket WiFi</span>
+              </div>
+              <p className="text-subhead text-text-secondary mb-3">
+                {linksData.connectivity.pocketWifi.tip}
+              </p>
+              <a
+                href={linksData.connectivity.pocketWifi.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-3 h-8 bg-bg-primary rounded-full text-footnote text-apple-blue shadow-subtle transition-apple hover:shadow-card w-fit"
+              >
+                <span>{linksData.connectivity.pocketWifi.name}</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+              <div className="mt-3 p-2.5 bg-warning/10 rounded-[8px]">
+                <p className="text-caption text-warning font-medium">
+                  <span>‼️</span>{' '}
+                  <span className="font-bold">Check the Pick-up/Return menu to find the pickup location at your arrival airport.</span>
+                </p>
+              </div>
             </div>
           </div>
         )}

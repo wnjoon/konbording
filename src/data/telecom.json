@@ -1,0 +1,80 @@
+{
+  "terminals": {
+    "1": {
+      "name": "Terminal 1",
+      "centers": [
+        {
+          "id": "lgu-t1",
+          "name": "LG U+ Roaming Center",
+          "hours": "00:00 ~ 24:00",
+          "location": "Near Arrival Hall A on the East Side of 1st Floor, Terminal 1",
+          "mapUrl": "https://www.airport.kr/geomap/ap_en/view.do?type=1&alertType=undefined&poiId=466#/search/item/33856",
+          "featured": true
+        },
+        {
+          "id": "kt-t1",
+          "name": "KT Roaming Center",
+          "hours": "00:00 ~ 24:00",
+          "location": "Near Arrival Hall F on the West Side of 1st Floor, Terminal 1",
+          "mapUrl": "https://www.airport.kr/geomap/ap_en/view.do?type=1&alertType=undefined&poiId=939#/search/item/33480",
+          "featured": true
+        },
+        {
+          "id": "skt-t1",
+          "name": "SK Telecom Roaming Center",
+          "hours": "00:00 ~ 24:00",
+          "location": "Near Arrival Hall F on the West Side of 1st Floor, Terminal 1",
+          "mapUrl": "https://www.airport.kr/geomap/ap_en/view.do?type=1&alertType=undefined&poiId=193#/search/item/33481",
+          "featured": true
+        },
+        {
+          "id": "wifi-dosirak-t1",
+          "name": "WiFi Dosirak",
+          "hours": "00:00 ~ 24:00",
+          "location": "Near Arrival Hall F on the West Side of 1st Floor, Terminal 1",
+          "mapUrl": "https://www.airport.kr/geomap/ap_en/view.do?type=1&alertType=undefined&poiId=841#/search/item/33817",
+          "featured": true
+        }
+      ],
+      "allCentersUrl": "https://www.airport.kr/ap_en/1536/subview.do?enc=Zm5jdDF8QEB8JTJGZmFjaWxpdHlJbmZvJTJGYXBfZW4lMkY0MiUyRmxpc3QuZG8lM0ZzcmNoVGVybWluYWxJZCUzRFAwMSUyNnNyY2hDb2x1bW4lM0R1c2VyJTI2c3JjaExjbGFzJTNEMSUyNnNyY2hNbHNmYyUzRDEyJTI2c3JjaFNjbGFzJTNEJTI2c3JjaFdyZCUzRCUyNg%3D%3D"
+    },
+    "2": {
+      "name": "Terminal 2",
+      "centers": [
+        {
+          "id": "lgu-t2",
+          "name": "LG U+ Roaming Center",
+          "hours": "00:00 ~ 24:00",
+          "location": "Near Exit 5 on 1st Floor, Terminal 2",
+          "mapUrl": "https://www.airport.kr/geomap/ap_en/view.do?type=1&alertType=undefined&poiId=222#/search/item/33857",
+          "featured": true
+        },
+        {
+          "id": "kt-t2",
+          "name": "KT Roaming Center",
+          "hours": "00:00 ~ 24:00",
+          "location": "Near Exit 5 on 1st Floor, Terminal 2",
+          "mapUrl": "https://www.airport.kr/geomap/ap_en/view.do?type=1&alertType=undefined&poiId=650#/search/item/33482",
+          "featured": true
+        },
+        {
+          "id": "skt-t2",
+          "name": "SK Telecom Roaming Center",
+          "hours": "00:00 ~ 24:00",
+          "location": "Near Exit 7 on 1st Floor, Terminal 2",
+          "mapUrl": "https://www.airport.kr/geomap/ap_en/view.do?type=1&alertType=undefined&poiId=883#/search/item/33483",
+          "featured": true
+        },
+        {
+          "id": "wifi-dosirak-t2",
+          "name": "WiFi Dosirak",
+          "hours": "06:00 ~ 22:00",
+          "location": "Near Exit 3 on 1st Floor, Terminal 2",
+          "mapUrl": "https://www.airport.kr/geomap/ap_en/view.do?type=1&alertType=undefined&poiId=318#/search/item/33818",
+          "featured": false
+        }
+      ],
+      "allCentersUrl": "https://www.airport.kr/ap_en/1536/subview.do?enc=Zm5jdDF8QEB8JTJGZmFjaWxpdHlJbmZvJTJGYXBfZW4lMkY0MiUyRmxpc3QuZG8lM0ZzcmNoVGVybWluYWxJZCUzRFAwMyUyNnNyY2hDb2x1bW4lM0R1c2VyJTI2c3JjaExjbGFzJTNEMSUyNnNyY2hNbHNmYyUzRDEyJTI2c3JjaFNjbGFzJTNEJTI2c3JjaFdyZCUzRCUyNg%3D%3D"
+    }
+  }
+}
