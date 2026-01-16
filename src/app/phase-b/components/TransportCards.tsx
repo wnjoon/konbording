@@ -97,9 +97,11 @@ export function TransportCards() {
     const exchangeSection = document.getElementById('currency-exchange');
     if (exchangeSection) {
       exchangeSection.scrollIntoView({ behavior: 'smooth' });
-      exchangeSection.classList.add('ring-2', 'ring-apple-blue', 'ring-offset-8', 'ring-offset-bg-secondary');
+      exchangeSection.style.outline = '2px solid var(--color-apple-blue)';
+      exchangeSection.style.outlineOffset = '4px';
       setTimeout(() => {
-        exchangeSection.classList.remove('ring-2', 'ring-apple-blue', 'ring-offset-8', 'ring-offset-bg-secondary');
+        exchangeSection.style.outline = '';
+        exchangeSection.style.outlineOffset = '';
       }, 2000);
     }
   };
@@ -108,9 +110,11 @@ export function TransportCards() {
     const storeSection = document.getElementById('convenience-store');
     if (storeSection) {
       storeSection.scrollIntoView({ behavior: 'smooth' });
-      storeSection.classList.add('ring-2', 'ring-apple-blue', 'ring-offset-8', 'ring-offset-bg-secondary');
+      storeSection.style.outline = '2px solid var(--color-apple-blue)';
+      storeSection.style.outlineOffset = '4px';
       setTimeout(() => {
-        storeSection.classList.remove('ring-2', 'ring-apple-blue', 'ring-offset-8', 'ring-offset-bg-secondary');
+        storeSection.style.outline = '';
+        storeSection.style.outlineOffset = '';
       }, 2000);
     }
   };
