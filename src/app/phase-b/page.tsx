@@ -49,7 +49,8 @@ export default function PhaseB() {
           {terminal && (
             <div className="mt-10">
               <p className="text-footnote text-text-secondary uppercase tracking-wider px-1 mb-4">
-                Terminal {terminal} Guide
+                {/* Terminal {terminal} Guide */}
+                Before you leave the airport
               </p>
               <div className="space-y-4">
                 <CurrencyExchange terminal={terminal} />

@@ -1,6 +1,7 @@
 import { Logo } from '@/components/common/Logo';
 import { ThemeToggle } from '@/components/common/ThemeToggle';
 import { PhaseCard } from '@/components/landing/PhaseCard';
+import { EmergencyContacts } from '@/components/landing/EmergencyContacts';
 
 export default function Home() {
   return (
@@ -67,6 +68,14 @@ export default function Home() {
               title="Just Arrived in Korea"
               description="Find help at the airport right now"
             />
+          </section>
+
+          {/* Emergency Contacts */}
+          <section className="mt-6">
+            <h2 className="text-footnote text-text-secondary uppercase tracking-wider px-1 mb-3">
+              In case of emergency
+            </h2>
+            <EmergencyContacts />
           </section>
 
           {/* Footer */}
